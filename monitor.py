@@ -2,7 +2,7 @@
 import sys
 import time
 import os
-sys.path.insert(0, '/home/pi/Adafruit_Python_BME280')
+
 import requests
 from lxml import html
 from Adafruit_BME280 import *
@@ -16,6 +16,9 @@ config = ConfigParser.ConfigParser()
 configFile = os.path.realpath(__file__)
 configFile = os.path.dirname(configFile)+'/config.ini'
 config.read(configFile)
+
+# Path to Adafruit Python BME280 directory
+sys.path.insert(0, config.get('BME280','path'))
 
 # Pin Definitions:
 humPin = int(config.get('Temp','humPin')) # Humidifier Relay
