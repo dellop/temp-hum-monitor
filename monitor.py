@@ -2,7 +2,6 @@
 import sys
 import time
 import os
-
 import requests
 from lxml import html
 from Adafruit_BME280 import *
