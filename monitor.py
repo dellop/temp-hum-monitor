@@ -13,7 +13,8 @@ import ConfigParser
 
 # Pull config variables
 config = ConfigParser.ConfigParser()
-configFile = os.getcwd()+'/config.ini'
+configFile = os.path.realpath(__file__)
+configFile = os.path.dirname(configFile)+'/config.ini'
 config.read(configFile)
 
 # Pin Definitions:
