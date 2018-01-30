@@ -4,7 +4,6 @@ import time
 import os
 import requests
 from lxml import html
-from Adafruit_BME280 import *
 import urllib2
 import MySQLdb
 import RPi.GPIO as GPIO
@@ -18,6 +17,7 @@ config.read(configFile)
 
 # Path to Adafruit Python BME280 directory
 sys.path.insert(0, config.get('BME280','path'))
+from Adafruit_BME280 import *
 
 # Pin Definitions:
 humPin = int(config.get('Temp','humPin')) # Humidifier Relay
